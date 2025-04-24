@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fa fa-building"></i>
+            <h1>Luxury Hotel</h1>
+        </div>
+        <div class="auth-buttons" id="auth-buttons">
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+        </div>
+        <div class="user-info" id="user-info" style="display: none;">
+            <i class="fa fa-user"></i>
+            <span id="username-display"></span>
+        </div>
+    </div>
+    
+    <div class="rooms-container" id="rooms-container"></div>
+    
+    <div class="bookings-container" id="bookings-container"></div>
+    
+    <!-- Room Details Modal -->
+    <div id="roomDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-room-details">&times;</span>
+            <div id="room-details-content"></div>
+            <button id="book-now-btn" style="display: none;">Book Now</button>
+        </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="login-submit">Login</button>
+        </div>
+    </div>
+    
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username">
+            <input type="password" id="register-password" placeholder="Password">
+            <input type="email" id="register-email" placeholder="Email">
+            <button id="register-submit">Register</button>
+        </div>
+    </div>
+    
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-booking">&times;</span>
+            <h2>Book Room</h2>
+            <input type="date" id="check-in" placeholder="Check-in Date">
+            <input type="date" id="check-out" placeholder="Check-out Date">
+            <button id="booking-submit">Confirm Booking</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
