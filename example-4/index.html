@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        width: 300px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .login {
+        padding: 8px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .login:hover {
+        background-color: #0056b3;
+      }
+      .forgot-password {
+        background: none;
+        border: none;
+        color: #007bff;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .forgot-password:hover {
+        text-decoration: none;
+      }
+      .form-container h2 {
+        margin-bottom: 20px;
+      }
+      .register {
+        display: none;
+      }
+      .register-active{
+        display: block;
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        & button {
+          width: 100%;
+          border: none;
+          background-color: #f8f9fa;
+          padding: 10px;
+        }
+        & button[active] {
+          background-color: #007bff;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="form-container">
+        <nav>
+          <button class="signin" active>Sign In</button>
+          <button class="signup" >Sign Up</button>
+        </nav>
+        <h2>Login</h2>
+        <form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group register">
+            <label for="FristName">FristName</label>
+            <input type="text" id="first-name" name="first-name" required />
+          </div>
+          <div class="form-group register">
+            <label for="LastName">LastName</label>
+            <input type="text" id="last-name" name="last-name" required />
+          </div>
+          <button class="login" type="submit">Login</button>
+          <button type="button" class="forgot-password">
+            Forgot Password?
+          </button>
+        </form>
+      </div>
+    </main>
+    <script>
+        const loginButton = document.querySelector('.login');
+        const registerInput = document.querySelectorAll('.register');
+        const signInButton = document.querySelector('.signin');
+        const signUpButton = document.querySelector('.signup');
+    
+        signInButton.addEventListener('click', () => {
+            signInButton.setAttribute('active', '');
+            signUpButton.removeAttribute('active');
+            registerInput.forEach(input => {
+                input.classList.remove('register-active');
+            });
+            loginButton.innerText = 'Login';
+        });
+    
+        signUpButton.addEventListener('click', () => {
+            signUpButton.setAttribute('active', '');
+            signInButton.removeAttribute('active');
+            registerInput.forEach(input => {
+                input.classList.add('register-active');
+            });
+            loginButton.innerText = 'Register';
+        });
+    </script>
+  </body>
+</html>
